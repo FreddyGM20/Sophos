@@ -132,7 +132,7 @@ exports.updateRentalPrice = async (req, res) => {
       }
   
       if (!games || games.length === 0) {
-        return res.status(404).json({ error: 'No se encontraron juegos con el criterio especificado' });
+        return res.status(201).json({ error: 'No se encontraron juegos con el criterio especificado' });
       }
   
       res.json(games);
@@ -172,7 +172,7 @@ exports.updateRentalPrice = async (req, res) => {
       });
   
       if (!leastRentedGame) {
-        return res.status(404).json({ error: 'No hay juegos disponibles en el rango de edad especificado.' });
+        return res.status(201).json({ error: 'No hay juegos disponibles en el rango de edad especificado.' });
       }
   
       res.json(leastRentedGame);

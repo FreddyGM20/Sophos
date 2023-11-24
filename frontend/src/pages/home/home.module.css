@@ -25,7 +25,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 200px;
+  margin-top: 160px;
   width: 100%;
   gap: 110px;
 }
@@ -33,10 +33,11 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 15px;
   align-items: center;
   margin-top: 5px;
-  flex-basis: 45%;
+  width: 28%;
   height: 100%;
   border: 2px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
@@ -55,7 +56,7 @@
 }
 
 .wrapper h2 {
-  font-size: 24px;
+  font-size: 18px;
   color: white;
   text-align: center;
   z-index: 1;
@@ -152,13 +153,13 @@
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: cyan;
+  background-color: white;
   border-radius: 40px;
 }
 
 .rentalList {
   display: flex;
-  gap: 20px;
+  gap: 6%;
   width: 100%;
   justify-content: start;
   align-items: center;
@@ -170,17 +171,17 @@
 .rentalItem {
   display: flex;
   flex-direction: column;
-  flex-basis: 23.8%;
-  gap: 25px;
+  width: 20%;
+  gap: 20px;
   justify-content: center;
   align-items: center;
-  padding: 8px;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 10px;
-  padding: 50px;
+  padding: 20px;
   backdrop-filter: blur(50px);
   box-shadow: 10px 10px 17px 0px rgba(0, 0, 0, 0.35);
   z-index: 1;
+  margin-bottom: 50px;
 }
 
 .wrapper2 h1 {
@@ -207,6 +208,7 @@
   font-size: 1.1em;
   color: white;
   font-weight: 500;
+  z-index: 1;
 }
 .btnList:hover {
   transition: linear 0.3s;

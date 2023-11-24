@@ -9,13 +9,13 @@ class Navbar extends Component {
         <header>
           <div className={style.logo}>
             <img src={logo} alt="Logo" />
-            <h2>Mountain</h2>
+            <h2>Mountain Games</h2>
           </div>
           <nav className={style.navigation}>
-            <a href="">Stats</a>
-            <a href="">Games</a>
-            <a href="">Clients</a>
-            <a href="">Contact</a>
+            <a href="/stats">Estadisticas</a>
+            <a href="/games">Juegos</a>
+            <a href="/customers">Clientes</a>
+            <a href="">Rentar</a>
           </nav>
         </header>
     );
