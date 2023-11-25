@@ -180,6 +180,7 @@
   padding: 20px;
   backdrop-filter: blur(50px);
   box-shadow: 10px 10px 17px 0px rgba(0, 0, 0, 0.35);
+  background-color: rgba(255, 255, 255, 0.3);
   z-index: 1;
   margin-bottom: 50px;
 }
@@ -216,8 +217,19 @@
   color: #003af6;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 1400px) {
   .wrapper {
-    width: 350px;
+    width: 30vw;
+    height: 36vh;
+  }
+  .wrapper h1{
+    font-size: 22px;
+  }
+  .wrapper2{
+    height: 100%;
+  }
+  .containerWrappers {
+    gap: 50px;
+    margin-top: 120px;
   }
 }

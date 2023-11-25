@@ -14,7 +14,7 @@ function MessageSee1({ message }) {
     return <h2>Seleccione un rango de edad</h2>;
   }
   if (message.error) {
-    return <h2 key={message.id}>No hay juegos para este rango de edad</h2>;
+    return <h2 key={message.id}>No hay juegos para este rango</h2>;
   }
 
   return <h2 key={message.id}>{message.name}</h2>;

@@ -247,7 +247,7 @@ const Rental = () => {
         >
           <div className={style.boxModalG}>
             <div className={style.buttonCl}>
-              <button onClick={handleCloseModal1} className={style.btnEdit}>
+              <button onClick={handleCloseModal1} className={style.btnList}>
                 <CloseIcon />
               </button>
             </div>
@@ -330,7 +330,7 @@ const Rental = () => {
               <div className={style.buttonForm}>
                 <button
                   onClick={() => handleClickSave()}
-                  className={style.btnEdit}
+                  className={style.btnList}
                 >
                   Guardar comprobante
                 </button>
@@ -348,7 +348,7 @@ const Rental = () => {
         >
           <div className={style.boxModalG}>
             <div className={style.buttonCl}>
-              <button onClick={handleCloseClick} className={style.btnEdit}>
+              <button onClick={handleCloseClick} className={style.btnList}>
                 <CloseIcon />
               </button>
             </div>

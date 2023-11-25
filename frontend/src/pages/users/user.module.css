@@ -197,6 +197,7 @@
   padding: 20px;
   backdrop-filter: blur(50px);
   box-shadow: 10px 10px 17px 0px rgba(0, 0, 0, 0.35);
+  background-color: rgba(255, 255, 255, 0.3);
   z-index: 1;
   margin-bottom: 50px;
 }
@@ -236,8 +237,12 @@
   color: #003af6;
 }
 
-@media (max-width: 540px) {
-  .wrapper {
-    width: 350px;
+@media (max-width: 1400px) {
+  .containerInfo {
+    margin-top: 120px;
+  }
+  .wrapper2{
+    width: 96vw;
+    height: 70vh;
   }
 }

@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 header {
@@ -75,4 +76,10 @@ header img {
 
 .navigation a:hover::after {
   transform: scaleX(1);
+}
+
+@media (max-width: 1400px) {
+  header{
+    height: 14%;
+  }
 }

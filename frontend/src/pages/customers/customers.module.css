@@ -271,3 +271,30 @@
 .errorMessage h1 {
   margin-top: 100px;
 }
+
+@media (max-width: 1400px) {
+  .container h1{
+    font-size: 30px;
+  }
+  .container{
+    margin-top: 120px;
+  }
+  .wrapper{
+    height: 55vh;
+    width: 90vw;
+  }
+  .headerInput{
+    width: 94%;
+    height: 15%;
+  }
+  .headerInput .contain{
+    width: 40%;
+  }
+  .boxModalCG{
+    height: 90vh;
+    gap: 2px;
+  }
+  .tableHeader{
+    height: 50px;
+  }
+}

@@ -292,11 +292,11 @@ const Game = () => {
                   </div>
                   <div className={Style.divider}>
                     <h2>Productor</h2>
-                    <input id="productorGame" placeholder="Prodcutor del videojuego" type="text" />
+                    <input id="productorGame" placeholder="Productor del videojuego" type="text" />
                   </div>
                 </div>
                 <div className={Style.buttonForm}>
-                  <button onClick={handleSaveNewGame}>Guardar juego</button>
+                  <button onClick={handleSaveNewGame} className={Style.btnEdit}>Guardar juego</button>
                 </div>
               </form>
             </div>

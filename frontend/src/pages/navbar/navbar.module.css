@@ -76,3 +76,10 @@ header img {
 .navigation a:hover::after {
   transform: scaleX(1);
 }
+
+@media (max-width: 1400px) {
+  header{
+    height: 14%;
+  }
+}
+
