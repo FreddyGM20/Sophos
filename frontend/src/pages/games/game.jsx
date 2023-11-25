@@ -14,6 +14,16 @@ import Modal from "@mui/material/Modal";
 const url = "http://localhost:3000/";
 
 function TablaJuegos({ juegos, handleIconClick }) {
+  if (juegos.length == 0) {
+    return (
+      <tr>
+        <td colSpan="3" className={Style.errorMessage}>
+          <h1>No hay juegos creados</h1>
+        </td>
+      </tr>
+    );
+  }
+
   if (juegos.error) {
     return (
       <tr>
@@ -47,7 +57,7 @@ const Game = () => {
   const [games, setGames] = useState(null);
   const [filteredGames, setFilteredGames] = useState(null);
   const [selectedGame, setSelectedGame] = useState(null);
-  
+
   const [plataform, setPlataform] = useState(null);
   const handleChangeP = (event) => {
     setPlataform(event.target.value);
@@ -229,22 +239,24 @@ const Game = () => {
               </div>
               <form onSubmit={(e) => e.preventDefault()}>
                 <h2>Nombre del juego: </h2>
-                <input id="nameGame" type="text" />
+                <input id="nameGame" placeholder="Nombre del videojuego" type="text" />
                 <div className={Style.sectionForm}>
                   <div className={Style.divider}>
                     <h2>Año de creacion del juego:</h2>
-                    <input id="yearGame" type="text" />
+                    <input id="yearGame" placeholder="Año del videojuego" type="text" />
                   </div>
                   <div className={Style.divider}>
-                    <h2>Precio del juego <br />a rentar:</h2>
-                    <input id="priceGame" type="text" />
+                    <h2>
+                      Precio del juego <br />a rentar:
+                    </h2>
+                    <input id="priceGame" placeholder="Precio del videojuego" type="text" />
                   </div>
                 </div>
 
                 <h2>Protagonistas: </h2>
-                <input id="protagonistGame" type="text" />
+                <input id="protagonistGame" placeholder="Protagnonistas del videojuego" type="text" />
                 <h2>Director: </h2>
-                <input id="directorGame" type="text" />
+                <input id="directorGame" placeholder="Director del videojuego" type="text" />
                 <div className={Style.sectionForm}>
                   <div className={Style.divider}>
                     <h2>Plataforma: </h2>
@@ -280,7 +292,7 @@ const Game = () => {
                   </div>
                   <div className={Style.divider}>
                     <h2>Productor</h2>
-                    <input id="productorGame" type="text" />
+                    <input id="productorGame" placeholder="Prodcutor del videojuego" type="text" />
                   </div>
                 </div>
                 <div className={Style.buttonForm}>

@@ -9,28 +9,33 @@ import Select from "@mui/material/Select";
 
 const url = "http://localhost:3000/";
 
-function MessageSee({ message }) {
+function MessageSee1({ message }) {
   if (!message) {
-    return (
-      <h2>Seleccione</h2>
-    );
+    return <h2>Seleccione un rango de edad</h2>;
   }
   if (message.error) {
-    return (
-      <h2 key={message.id}>No hay juegos para este rango de edad</h2>
-    );
+    return <h2 key={message.id}>No hay juegos para este rango de edad</h2>;
   }
 
-  return (
-    <h2 key={message.id}>{message.name}</h2>
-  );
+  return <h2 key={message.id}>{message.name}</h2>;
+}
+
+function MessageSee({ message }) {
+  if (!message) {
+    return <h2>No hay datos disponibles</h2>;
+  }
+  if (message.error) {
+    return <h2 key={message.id}>No hay juegos para este rango de edad</h2>;
+  }
+
+  return <h2 key={message.id}>{message.name}</h2>;
 }
 
 const Home = () => {
   const [customerFr, setCustomerFr] = useState(null);
   const [gameMS, setGameMS] = useState(null);
   const [gameDS, setGameDS] = useState(null);
-  const [dataRange, setDataRange] = useState(null);
+  const [dataRange, setDataRange] = useState();
   const [range, setRange] = useState(null);
   const handleChangeR = (event) => {
     setRange(event.target.value);
@@ -86,13 +91,13 @@ const Home = () => {
       <Navbar />
       <div className={style.containerWrappers}>
         <div className={style.wrapper}>
-        <h1>Cliente mas frecuente:</h1>
-        <MessageSee message={customerFr}/>
+          <h1>Cliente mas frecuente:</h1>
+          <MessageSee message={customerFr} />
         </div>
 
         <div className={style.wrapper}>
           <h1>Juego mas vendido:</h1>
-          <MessageSee message={gameMS}/>
+          <MessageSee message={gameMS} />
         </div>
 
         <div className={style.wrapper}>
@@ -131,14 +136,18 @@ const Home = () => {
               <MenuItem value={70}>60-70</MenuItem>
             </Select>
           </FormControl>
-          <MessageSee message={dataRange}/>
+          <MessageSee1 message={dataRange} />
           <button onClick={handleSeeRange} className={style.btnList}>
             Buscar
           </button>
         </div>
       </div>
       <div className={style.wrapper2}>
-        <h1>Ventas de hoy: </h1>
+        {gameDS ? (
+          <h1>Ventas de hoy: {gameDS.length}</h1>
+        ) : (
+          <h1>Ventas de hoy: </h1>
+        )}
         {gameDS && (
           <div className={style.rentalList}>
             {gameDS.map((rental) => (
@@ -146,7 +155,6 @@ const Home = () => {
                 <h3>ID de transaccion: {rental.id}</h3>
                 <h3>Juego rentado: {rental.Game.name}</h3>
                 <p>Cliente: {rental.customerName}</p>
-                <button className={style.btnList}>Ver mas</button>
               </div>
             ))}
           </div>

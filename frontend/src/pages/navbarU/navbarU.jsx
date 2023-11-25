@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import logo from "../../assets/montaña.svg";
-import style from'./navbar.module.css'  
+import style from'./navbarU.module.css'  
 
 
 class Navbar extends Component {
@@ -11,12 +11,6 @@ class Navbar extends Component {
             <img src={logo} alt="Logo" />
             <h2>Mountain Games</h2>
           </div>
-          <nav className={style.navigation}>
-            <a href="/stats">Estadisticas</a>
-            <a href="/games">Juegos</a>
-            <a href="/customers">Clientes</a>
-            <a href="/rentals">Rentar</a>
-          </nav>
         </header>
     );
   }

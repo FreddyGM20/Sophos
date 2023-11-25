@@ -191,11 +191,20 @@
   flex-direction: column;
   gap: 40px;
   position: absolute;
-  color: black;
+  color: white;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-image: radial-gradient(
+    circle at 50% -20.71%,
+    #e459ea 0,
+    #c84ded 16.67%,
+    #a544f0 33.33%,
+    #783cf2 50%,
+    #2538f4 66.67%,
+    #0039f5 83.33%,
+    #003af6 100%
+  );
   width: 60%;
   height: auto;
   border-radius: 10px;
@@ -220,7 +229,7 @@
 }
 .boxModalG form input {
   display: flex;
-  background-color: transparent;
+  background-color: white;
   justify-content: end;
   align-items: center;
   width: 65%;
@@ -228,6 +237,7 @@
   border-radius: 10px;
   padding: 8px;
   outline: none;
+  border: none;
 }
 .boxModalG form .buttonForm {
   display: flex;
@@ -257,4 +267,7 @@
 .boxModalG form .sectionForm .divider input {
   height: 60%;
   width: 40%;
+}
+.errorMessage h1 {
+  margin-top: 100px;
 }

@@ -23,6 +23,24 @@ exports.getAllGames = async (req, res) => {
   }
 };
 
+// Controlador para buscar un juego por ID
+exports.getGameById = async (req, res) => {
+  const { gameId } = req.params;
+
+  try {
+    const game = await Game.findByPk(gameId);
+
+    if (!game) {
+      return res.status(404).json({ error: 'Juego no encontrado' });
+    }
+
+    res.status(200).json(game);
+  } catch (error) {
+    console.error('Error al buscar juego por ID:', error);
+    res.status(500).json({ error: 'Error interno del servidor' });
+  }
+};
+
 // Nueva función para actualizar el precio del alquiler
 exports.updateRentalPrice = async (req, res) => {
   const { gameId } = req.params;

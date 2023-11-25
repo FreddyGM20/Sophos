@@ -36,7 +36,7 @@
   gap: 10px;
   justify-content: space-between;
   align-items: center;
-  width: 96%;
+  width: 94%;
   height: 10%;
   margin-left: 40px;
 }
@@ -56,13 +56,13 @@
     #003af6 100%
   );
   border-radius: 20px;
-  width: 50%;
+  width: 30%;
   height: 100%;
   padding: 10px;
 }
 
 .headerInput .contain input {
-  width: 40%;
+  width: 74%;
   height: 70%;
   background-color: white;
   color: black;
@@ -120,40 +120,6 @@
   border-radius: 40px;
 }
 
-.gameTable {
-  border-collapse: collapse;
-  width: 100%;
-  z-index: 1;
-}
-
-.gameItem {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
-  width: 40%;
-  text-overflow: ellipsis;
-}
-
-.gameItemPrice {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 8px;
-  text-align: center;
-}
-.tableHeader {
-  background-color: black;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  height: 110px;
-}
-.gameItemC {
-  padding: 8px;
-  text-align: center;
-}
-
 .wrapper h1 {
   font-size: 30px;
   color: white;
@@ -168,7 +134,95 @@
   z-index: 1;
 }
 
-.btnEdit {
+.wrapper2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+  height: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  width: 95.5%;
+  overflow-x: auto;
+  color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  margin: 0 40px;
+  overflow-y: auto; /* Añade scrollbar vertical si es necesario */
+  background-image: radial-gradient(
+    circle at 50% -20.71%,
+    #e459ea 0,
+    #c84ded 16.67%,
+    #a544f0 33.33%,
+    #783cf2 50%,
+    #2538f4 66.67%,
+    #0039f5 83.33%,
+    #003af6 100%
+  );
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: cyan transparent;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 40px;
+}
+
+.rentalList {
+  display: flex;
+  width: 100%;
+  gap: 2%;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  z-index: 1;
+}
+
+.rentalItem {
+  display: flex;
+  flex-direction: column;
+  width: 23.5%;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(50px);
+  box-shadow: 10px 10px 17px 0px rgba(0, 0, 0, 0.35);
+  z-index: 1;
+  margin-bottom: 50px;
+}
+
+.wrapper2 h1 {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.wrapper2 h2 {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.btnList {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,7 +234,7 @@
   color: white;
   font-weight: 500;
 }
-.btnEdit:hover {
+.btnList:hover {
   transition: linear 0.3s;
   background-color: white;
   color: #003af6;
@@ -189,7 +243,7 @@
 .boxModalG {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 10%;
   position: absolute;
   color: white;
   top: 50%;
@@ -205,12 +259,13 @@
     #0039f5 83.33%,
     #003af6 100%
   );
-  width: 60%;
-  height: auto;
+  width: 90vw;
+  height: 82vh;
   border-radius: 10px;
   box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.45);
   padding: 10px;
 }
+
 .boxModalG .buttonCl {
   display: flex;
   justify-content: end;
@@ -223,11 +278,11 @@
   height: 40px;
 }
 
-.boxModalG form {
+.boxModalG .containerLabels {
   display: flex;
   flex-direction: column;
 }
-.boxModalG form input {
+.boxModalG .containerLabels input {
   display: flex;
   background-color: white;
   justify-content: end;
@@ -239,112 +294,46 @@
   outline: none;
   border: none;
 }
-.boxModalG form .buttonForm {
+
+
+.boxModalG  .buttonForm {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
 }
-.boxModalG form .buttonForm button {
+.boxModalG  .buttonForm button {
   width: 30%;
   margin-bottom: 10px;
 }
 
-.boxModalG form .sectionForm {
+.boxModalG .containerLabels .sectionForm {
   display: flex;
-  gap: 30px;
-  margin-bottom: 40px;
-}
-
-.boxModalCG {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  position: absolute;
-  color: white;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-image: radial-gradient(
-    circle at 50% -20.71%,
-    #e459ea 0,
-    #c84ded 16.67%,
-    #a544f0 33.33%,
-    #783cf2 50%,
-    #2538f4 66.67%,
-    #0039f5 83.33%,
-    #003af6 100%
-  );
-  width: 60%;
-  height: 90%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 10px 10px 28px 0px rgba(0, 0, 0, 0.45);
-  padding: 20px;
-  overflow-x: auto;
-}
-.boxModalCG .buttonCl {
-  display: flex;
-  justify-content: end;
-}
-.boxModalCG .buttonCl button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-}
-
-.boxModalCG form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.boxModalCG form input {
-  display: flex;
-  background-color: white;
-  justify-content: end;
-  align-items: center;
-  width: 100%;
-  color: black;
-  border-radius: 10px;
-  padding: 8px;
-  outline: none;
-  border: none;
-}
-.boxModalCG form .buttonForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 40px;
-}
-.boxModalCG form .buttonForm button {
-  width: 30%;
-}
-
-.boxModalCG form .sectionForm {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-  margin-bottom: 40px;
   justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.boxModalG .containerLabels .sectionForm:nth-child(1) input{
+width: 80%;
+}
+.boxModalG .containerLabels .sectionForm:nth-child(4) input{
+  width: 80%;
+  }
+  
+
+.boxModalG .containerLabels .sectionForm .divider {
+  display: flex;
   align-items: center;
   width: 100%;
+  gap: 30px;
 }
-.boxModalCG form .sectionForm .divider {
-  display: flex;
-  width: 100%;
-  gap: 15px;
-}
-.boxModalCG form .sectionForm .divider:nth-child(2) {
-justify-content: center;
-}
-.boxModalCG form .sectionForm input {
-  height: 80%;
+
+.boxModalG .containerLabels .sectionForm .divider input {
+  height: 60%;
   width: 40%;
 }
-
-.errorMessage h1 {
-  margin-top: 100px;
+.boxModalG .containerLabels .errorMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
 }

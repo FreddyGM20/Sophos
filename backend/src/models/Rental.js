@@ -15,6 +15,14 @@ const Rental = sequelize.define('Rental', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  gameName: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  gamePrice: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
   customerName: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -25,6 +33,10 @@ const Rental = sequelize.define('Rental', {
   },
   customerAge: {
     type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  customerEmail: {
+    type: DataTypes.STRING,
     allowNull: false,
   },
   dueDate: {

@@ -4,6 +4,8 @@ const gameController = require('../controllers/gameController');
 
 router.post('/', gameController.createGame);
 router.get('/', gameController.getAllGames);
+// Ruta para buscar un juego por ID
+router.get('/gameid/:gameId', gameController.getGameById);
 // Nueva ruta para actualizar el precio del alquiler
 router.put('/:gameId/rentalPrice', gameController.updateRentalPrice);
 // Nueva ruta para obtener el juego más rentado

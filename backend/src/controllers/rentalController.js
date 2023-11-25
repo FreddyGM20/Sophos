@@ -13,6 +13,12 @@ exports.createRental = async (req, res) => {
       return res.status(404).json({ error: 'Cliente no encontrado' });
     }
 
+    // Obtén la información del juego
+    const game = await Game.findByPk(gameId);
+    if (!game) {
+      return res.status(404).json({ error: 'Juego no encontrado' });
+    }
+
     // Realizamos un nuevo alquiler
     const rental = await Rental.create({
       customerId,
@@ -20,22 +26,22 @@ exports.createRental = async (req, res) => {
       customerAge: customer.age, // Utiliza la edad del cliente
       customerName: customer.name,
       customerIdentity: customer.identity,
+      customerEmail:customer.email,
       dueDate: calculateDueDate(), // Agrega la fecha de vencimiento del alquiler
+      gameName: game.name, // Agrega el nombre del juego al alquiler
+      gamePrice: game.rentalPrice, // Agrega el precio del juego al alquiler
     });
 
     // Actualizamos el contador de alquileres del juego
-    const game = await Game.findByPk(gameId);
-    if (game) {
-      game.rentalsCount += 1;
+    game.rentalsCount += 1;
 
-      // Actualizamos la columna leastRentedAgeGroup si es necesario
-      if (!game.leastRentedAgeGroup || game.rentalsCount < game.leastRentedAgeGroupRentals) {
-        game.leastRentedAgeGroup = customer.age;
-        game.leastRentedAgeGroupRentals = game.rentalsCount;
-      }
-
-      await game.save();
+    // Actualizamos la columna leastRentedAgeGroup si es necesario
+    if (!game.leastRentedAgeGroup || game.rentalsCount < game.leastRentedAgeGroupRentals) {
+      game.leastRentedAgeGroup = customer.age;
+      game.leastRentedAgeGroupRentals = game.rentalsCount;
     }
+
+    await game.save();
 
     // Actualizamos el contador de alquileres del cliente y almacenamos la información básica
     customer.rentalsCount += 1;
@@ -185,10 +191,11 @@ exports.getCustomerRentalsInfo = async (req, res) => {
 
     // Construimos la respuesta con la información requerida
     const customerRentalsInfo = customerRentals.map(rental => ({
+      id: rental.id,
       title: rental.Game.name,
       rentalDate: rental.createdAt,
       dueDate: rental.dueDate,
-      balance: rental.balance,
+      price: rental.gamePrice,
     }));
 
     res.json(customerRentalsInfo);

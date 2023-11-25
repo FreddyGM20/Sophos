@@ -19,6 +19,15 @@ function TablaClientes({ clientes }) {
     );
   }
 
+  if (clientes.length === 0) {
+    return (
+      <tr>
+        <td colSpan="3" className={style.errorMessage}>
+          <h1>No hay clientes creados</h1>
+        </td>
+      </tr>
+    );
+  }
   return clientes.map((cliente) => (
     <tr key={cliente.id}>
       <td className={style.customerItem}>{cliente.id}</td>
@@ -59,8 +68,6 @@ const Customers = () => {
         identity: document.getElementById("identityCustomer").value,
         age: parseInt(document.getElementById("ageCustomer").value),
       });
-
-      setCustomers(response.data);
       handleCloseModal();
       window.location.reload();
     } catch (error) {
@@ -167,7 +174,6 @@ const Customers = () => {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                handleSaveNewCustomer();
               }}
             >
               <div className={style.sectionForm}>
